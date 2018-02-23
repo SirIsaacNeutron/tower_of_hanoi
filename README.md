@@ -1,7 +1,7 @@
 # tower_of_hanoi
 Python code for the classic Tower of Hanoi puzzle
 
-# Note: This is my first personal project on GitHub, so pardon me for any rough edges. Unfortunately I am not a good GUI programmer at the moment, but I am confident that my skills will improve as I learn more.
+# Note: This is my first personal project on GitHub, so pardon me for any rough edges. Unfortunately I am not a good GUI programmer at the moment, so I did not include a graphical version of Tower of Hanoi here. But I am confident that my skills will improve as I learn more.
 
 The Tower of Hanoi is an old puzzle in which the player must try to get all disks from the first tower (the leftmost one) to the last tower (the rightmost one). The disks have different sizes; only the topmost disk can be moved from a tower, and disks must always be smaller than the disks under them. And when the player moves disks, the disks always go as far down the Tower as possible. You can read more about the Tower of Hanoi puzzle here: https://en.wikipedia.org/wiki/Tower_of_Hanoi
 
