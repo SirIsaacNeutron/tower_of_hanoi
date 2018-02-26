@@ -98,19 +98,12 @@ class Tower:
     """
     def __init__(self, num_disks: int, empty=False):
         if not empty:
-            self.disks = self._get_disk_list(num_disks)
+            self.disks = [Disk(num) for num in range(1, num_disks + 1)]
         else:
             # self.disks has to be of length num_disks, regardless
             # of whether it has disks or not.
             self.disks = [EMPTY for num in range(0, num_disks)]
         
-    def _get_disk_list(self, num_disks: int) -> [Disk]:
-        """Return a list of Disks, where the first element is the
-        smallest Disk (starting at size 1) and the last element the
-        largest.
-        """
-        return [Disk(num) for num in range(1, num_disks + 1)]
-    
     def move_disk_to(self, other_tower) -> None:
         """Move the smallest Disk from this Tower to other_tower.
         This method guarantees that after the move, the Disks in
