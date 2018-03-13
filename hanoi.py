@@ -1,4 +1,4 @@
-'''
+"""
 The Tower of Hanoi is an old puzzle in which the player must try to get
 all disks from the first tower (the leftmost one) to the last tower
 (the rightmost one). The disks have different sizes; only the topmost
@@ -12,9 +12,23 @@ https://en.wikipedia.org/wiki/Tower_of_Hanoi
 Created on Feb 15, 2018.
 
 @author SirIsaacNeutron
-'''
+"""
 
 EMPTY = 0  # Represents an empty space in a Tower
+HELP_MESSAGE = ('Welcome to the Tower of Hanoi program!' 
+                + '\nYour goal is to get all the Disks from the leftmost Tower to '
+                + 'the rightmost.'
+                + '\n\nRules:'
+                + '\n\t1. You can only move one Disk at a time.'
+                + '\n\t2. You can only remove the topmost Disk from any Tower.'
+                + '\n\t3. For a Disk to be on top of another Disk, the top Disk has '
+                + 'to smaller than the bottom Disk.'
+                + "\n\t    For example, a Disk with size 3 CAN'T be on top of a Disk of "
+                + 'size 2, or a Disk of size 1.'
+                + '\n\t    A Disk with size 3 CAN be on top of a Disk of size 4 '
+                + 'or more.'
+                + '\n\t4. When you move a Disk into another Tower, the Disk falls down '
+                + 'as far as possible.')
 
 
 class NoDisksError(Exception):
@@ -41,9 +55,15 @@ class InvalidFirstMoveError(Exception):
 class Game:
     """Represents a session of Tower of Hanoi. There are 3 Towers in
     the game; at the beginning, the first Tower is full of Disks, and
-    the other 2 Towers are empty.
+    the other 2 Towers are empty. 
+    
+    To make moves, call the move_disk_to() method
+    on the Towers.
     """
     def __init__(self, num_disks_per_tower: int):
+        if not isinstance(num_disks_per_tower, int):
+            raise TypeError('num_disks_per_tower is not an integer.')
+        
         self.tower_one = Tower(num_disks_per_tower)
         self.tower_two = Tower(num_disks_per_tower, empty=True)
         self.tower_three = Tower(num_disks_per_tower, empty=True)
@@ -64,6 +84,8 @@ class Game:
         # Print the first element of every tower's .disks list
         # Print the second element of every tower's .disks list
         # etc.
+        #
+        # Note that all Towers have the same number of Disks.
         while disk_index < len(towers[0].disks):
             for tower in towers:
                 if tower[disk_index] == EMPTY:
@@ -80,7 +102,7 @@ class Disk:
     are contained in Towers and to win the game, the final Tower
     must be totally filled with Disks.
     """
-    def __init__(self, size: int):
+    def __init__(self, size: int):        
         self.size = size
         
     def is_smaller_than(self, other_disk) -> bool:
@@ -96,7 +118,7 @@ class Tower:
     an arbitrary number of disks, and the player can pick a disk and move
     it to another Tower. There are only 3 Towers in the puzzle.
     """
-    def __init__(self, num_disks: int, empty=False):
+    def __init__(self, num_disks: int, empty=False):   
         if not empty:
             self.disks = [Disk(num) for num in range(1, num_disks + 1)]
         else:

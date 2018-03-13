@@ -1,9 +1,9 @@
-'''
+"""
 A console version of Tower of Hanoi.
 Created on Feb 19, 2018
 
 @author: SirIsaacNeutron
-'''
+"""
 import hanoi
 
 
@@ -38,25 +38,10 @@ def _determine_if_user_wants_help_message() -> None:
     
 def _print_help_message() -> None:
     """Print the instructions for Tower of Hanoi."""
-    print('Welcome to the Tower of Hanoi program!')
-    print(('Your goal is to get all the Disks from the leftmost Tower to '
-           + 'the rightmost.'))
-    print('Rules:')
-    print('\t1. You can only move one Disk at a time.')
-    print('\t2. You can only remove the topmost Disk from any Tower.')
-    print(('\t3. For a Disk to be on top of another Disk, the top Disk has '
-           + 'to smaller than the bottom Disk.'))
-    print("\t    For example, a Disk with size 3 CAN'T be on top of a Disk of "
-          + 'size 2, or a Disk of size 1.')
-    print('\t    A Disk with size 3 CAN be on top of a Disk of size 4 '
-          + 'or more.')
-    print('\t4. When you move a Disk into another Tower, the Disk falls down '
-          + 'as far as possible.')
-    print("Disk sizes are represented by numbers. [1] means "
-          + "'A Disk with size 1.'")
-    print("[ ] means 'This spot is empty.'")
-    print()
-  
+    print(hanoi.HELP_MESSAGE + "\nDisk sizes are represented by numbers. [1] means "
+                + "'A Disk with size 1.'"
+                + "\n[ ] means 'This spot is empty.'\n")
+
       
 def _update_game(game: hanoi.Game) -> hanoi.Game:
     """Update the status of the game and return a Game object reflecting
