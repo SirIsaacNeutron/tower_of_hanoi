@@ -157,10 +157,13 @@ class HanoiWindow:
             tower_dict[self._origin].move_disk_to(tower_dict[self._destination])
         except hanoi.InvalidMoveError:
             self._move_string.set("Invalid move! You can't put a bigger Disk on top of a "
-                                  + ' smaller Disk.')
+                                  + 'smaller Disk.')
             return None
         except hanoi.InvalidFirstMoveError:
             self._move_string.set('Error: you have to make your first move from Tower 1!')
+            return None
+        except hanoi.NoDisksError:
+            self._move_string.set('Error: ' + self._origin + ' has no Disks!')
             return None
         
         self._move_string.set('Moved from ' + self._origin + ' to ' + self._destination
@@ -254,7 +257,13 @@ class HanoiWindow:
         
     def _on_help_button(self) -> None:
         help_message = (hanoi.HELP_MESSAGE + '\n\nThe Towers are white rectangles, and the Disks are '
-                        + "numbers that represent the Disks' sizes.")
+                        + "numbers that represent the Disks' sizes.\n\n"
+                        + "To select a Tower to move from, click on one of the 'Tower' buttons. "
+                        + "Then, to select the Tower to move to, click on another one of the 'Tower' buttons."
+                        + " In short, the first Tower button you click is the Tower you're moving from,"
+                        + " and the second is the one you're moving to. \n\nTo cancel a move from a Tower,"
+                        + " click on the button of the Tower you're moving from again.")
+
         tkinter.messagebox.showinfo('Welcome to the Tower of Hanoi!',
                                     help_message)
     
