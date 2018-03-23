@@ -1,10 +1,12 @@
 # tower_of_hanoi
 Python code for the classic Tower of Hanoi puzzle
 
-# Note: This is my first personal project on GitHub, so pardon me for any rough edges. Unfortunately I am not a good GUI programmer at the moment, so I did not include a graphical version of Tower of Hanoi here. But I am confident that my skills will improve as I learn more.
-
 The Tower of Hanoi is an old puzzle in which the player must try to get all disks from the first tower (the leftmost one) to the last tower (the rightmost one). The disks have different sizes; only the topmost disk can be moved from a tower, and disks must always be smaller than the disks under them. And when the player moves disks, the disks always go as far down the Tower as possible. You can read more about the Tower of Hanoi puzzle here: https://en.wikipedia.org/wiki/Tower_of_Hanoi
 
-In order to try your hand at solving this puzzle, you will have to download hanoi_console.py and execute it from a command prompt. Of course, since I wrote this project in Python 3.6, you will need to have that on your computer as well. You can download a version of Python 3.6 here: https://www.python.org/downloads/.
+In order to try your hand at solving this puzzle, you will have to download hanoi_console.py (or if you want a graphical version, hanoi_window.py) and execute it from a command prompt. Of course, since I wrote this project in Python 3.6, you will need to have that on your computer as well. You can download a version of Python 3.6 here: https://www.python.org/downloads/.
 
-I hope you enjoy this little project of mine :). I look forward to learning more about Python and programming in general.
+### Please note that if you are going to use hanoi_window.py, you will have to specify the number of Disks in the dialog window before you can play Tower of Hanoi.
+
+In case you were wondering why I chose Tower of Hanoi for my first real GitHub project, I will explain that here. My final project for AP Computer Science in high school was whatever I wanted it to be; I chose to do Tower of Hanoi. I thought programming a Tower of Hanoi puzzle would be interesting, and I wanted to make something graphical, since I had never created any substantial graphical applications at that time. In order to make a graphical application, I thought to first make a console version, and then a graphical one. Well, I did manage to write Tower of Hanoi in Java, but it was badly designed; from what I remember, it assumed that user input would be from a terminal. In other words, my program was hard to use for a graphical app. This, of course, did not bode well for me. 
+
+When I tried to make my Tower of Hanoi graphical, I had a lot of problems, and I was very confused about how to even go about making a GUI in the first place. After some lukewarm, failed attempts to create a GUI for that program, I gave up, and turned in my console version instead. I did this project again because I wanted to overcome that challenge I faced. I wanted to make a GUI application by myself and show myself that I had improved as a programmer since high school. Well, although I am very far from perfect as a programmer, I am confident that I have learned and improved as a result of doing this project. I hope you enjoy it, and I look forward to learning more about Python and programming in general.
